@@ -1,0 +1,76 @@
+@use "./typography" as *;
+@use "./colors" as *;
+@use "./variables" as *;
+
+//display mixin's for flex
+@mixin padding() {
+	padding-top: 1.5rem;
+	padding-bottom: 1rem;
+}
+
+@mixin heading__style($font-color) {
+	color: $font-color;
+	@include mobile {
+		@include mobile-text-style-2;
+		padding-bottom: 1rem;
+	}
+	@include tablet {
+		@include desktop-text-style-2;
+		padding-bottom: 2.25rem;
+	}
+	@include desktop {
+		@include desktop-text-style-2;
+		padding-bottom: 2.25rem;
+	}
+}
+@mixin section__padding() {
+	padding: 1rem 1rem;
+	@include tablet {
+		padding: 3rem 2.25rem;
+	}
+	@include desktop {
+		padding: 3rem 7rem;
+	}
+}
+
+@mixin flex-dja($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+@mixin flex-djawrap($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	flex-wrap: wrap;
+}
+@mixin flex-djawrapg($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	flex-wrap: wrap;
+	flex-grow: 1;
+}
+
+//Style guide specs
+
+//different device specs
+@mixin mobile {
+	@media (max-width: $mobile--breakpoint) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (min-width: $tablet--breakpoint-min) and (max-width: $tablet--breakpoint-max) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop--breakpoint) {
+		@content;
+	}
+}

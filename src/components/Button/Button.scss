@@ -1,0 +1,10 @@
+@use "../../styles/partials/colors" as *;
+.button {
+	background-color: $brainflix-blue;
+	color: $white;
+	border-radius: 4px;
+	padding: 0 32px;
+	height: 40px;
+	width: 100%;
+	border: none;
+}
