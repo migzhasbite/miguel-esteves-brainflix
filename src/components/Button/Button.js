@@ -4,11 +4,7 @@ import "../Button/Button.scss";
 
 function Button() {
 	//run a function
-	return (
-		<button onClick="submit" className="button">
-			UPLOAD
-		</button>
-	);
+	return <button onClick="submit" className="button"></button>;
 }
 
 export default Button;

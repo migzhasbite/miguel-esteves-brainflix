@@ -1,30 +1,22 @@
-import "../Form/Form.scss";
-import Button from "../Button/Button";
+import "./Form.scss";
+import avatar from "../../../assets/images/Mohan-muruge.jpg";
 
 function Form() {
 	return (
 		<div>
 			<section class="form">
-				<h2 class="form__heading">Join the Conversation</h2>
 				<div class="form__container">
 					<div class="form__container--left">
-						<figure class="form__avatar"></figure>
+						<div className="avatar__wrapper">
+							<img src={avatar} className="form__avatar"></img>
+						</div>
 					</div>
 
 					<div class="form__container--right">
 						<form id="form" class="form__wrapper" name="comment-form">
-							<label class="form__subtitle" for="userName">
-								NAME
-							</label>
-							<input
-								class="form__text--name"
-								type="text"
-								id="userName"
-								name="userName"
-								placeholder="Enter your name"
-							/>
+							{" "}
 							<label class="form__subtitle" for="userComment">
-								COMMENT
+								JOIN THE CONVERSATION
 							</label>
 							<textarea
 								class="form__text--content"
@@ -33,15 +25,12 @@ function Form() {
 								placeholder="Add new commment"
 							></textarea>
 							<div class="form__button__wrapper">
-								<button class="form__button" type="submit">
-									COMMENT
-								</button>
+								<button onClick="submit" className="button"></button>;
 							</div>
 						</form>
 					</div>
 				</div>
 			</section>
-			{/* <section className="comments"></section> */}
 		</div>
 	);
 }

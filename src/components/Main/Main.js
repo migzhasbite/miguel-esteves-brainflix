@@ -1,34 +1,34 @@
 import React from "react";
-import data from "../../data/video-details.json";
 import views from "../../assets/icons/views.svg";
 import likes from "../../assets/icons/likes.svg";
 import "../Main/Main.scss";
 
-export default function Main() {
+export default function Main(props) {
+	console.log(props);
 	return (
 		<div className="main__container">
-			<h1 className="main__heading">{data[0].title}</h1>
+			<h1 className="main__heading">{props.handleLikes.title}</h1>
 			<div className="main__container--info">
-				{/* <div className="hero__container--info--column"> */}
 				<div className="main__container--info--left">
-					<p>By {data[0].channel}</p>
-					<p>{new Date(data[0].timestamp).toLocaleDateString("en-US")}</p>
+					<p>By {props.handleLikes.channel}</p>
+					<p>
+						{new Date(props.handleLikes.timestamp).toLocaleDateString("en-US")}
+					</p>
 				</div>
 				<div className="main__container--info--right">
 					<div className="main__container__section--column">
-						<img src={views} />
-						<p>{data[0].views}</p>
+						<img src={views} alt="views icon" />
+						<p>{props.handleLikes.views}</p>
 					</div>
 					<div className="main__container__section--column">
-						<img src={likes} />
-						<p>{data[0].likes}</p>
+						<img src={likes} alt="likes icon" />
+						<p>{props.handleLikes.likes}</p>
 					</div>
-					{/* </div> */}
 				</div>
 			</div>
 			<article className="main__container__section--paragraph">
 				<p className="main__container__section--paragraph-text">
-					{data[0].description}
+					{props.handleLikes.description}
 				</p>
 			</article>
 		</div>

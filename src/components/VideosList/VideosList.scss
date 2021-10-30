@@ -1,0 +1,15 @@
+.video-list {
+	&__heading {
+	}
+	&__container {
+		height: 10vh;
+		width: 100%;
+	}
+	&--info {
+	}
+	&__image {
+		height: 10vh;
+		width: 20%;
+		border-radius: 5px;
+	}
+}

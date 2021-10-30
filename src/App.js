@@ -1,41 +1,51 @@
-import logo from "./logo.svg";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Main from "./components/Main/Main";
-import Form from "./components/Form/Form";
-// import VideosList from "./components/VideosList/VideosList";
 import Comments from "./components/Comments/Comments";
-import videos from "./data/video-details.json";
+import VideosList from "./components/VideosList/VideosList";
+import data from "./data/video-details.json";
 import React, { Component } from "react";
 
-// const sortedVideos = videos.sort((a, b) => {
-// 	return b.upvotes - a.upvotes;
-// });
-export default function App() {
-	// state = {
-	// 	livesChanged: 0,
-	// 	books: sortedVideos,
-	//   };
-	//   handleButtonClick = () => {
-	// 	console.log("This button was clicked");
-	// 	this.setState({ livesChanged: this.state.livesChanged + 1 }, () => {
-	// 	  console.log(this.state.livesChanged);
-	// 	});
-	//   };
-	// render() {
-	return (
-		<div className="App">
-			<Header />
-			<Hero />
-			<Main />
-			{/* <VideosList /> */}
-			<h2>3 comments</h2>
-			<Form />
-			<Comments />
-		</div>
-	);
-	// }
+export default class App extends Component {
+	state = {
+		heroVideo: data[0],
+		videoList: data,
+		handleLikes: data,
+		userComments: data,
+	};
+	//event handler function
+	handleVideoClick = (event, id) => {
+		console.log(event, id);
+		// event.preventDefault();
+		//find all videos from the array to compare videos
+		const selectVideo = this.state.videoList.find((video) => id === video.id);
+		this.setState({
+			heroVideo: selectVideo,
+			videoList: data.filter((video) => selectVideo.id !== video.id),
+		});
+		console.log(selectVideo);
+	};
+	handleLikes = () => {
+		console.log("This button was clicked");
+		this.setState({ handleLikes: this.state.handleLikes + 1 }, () => {
+			console.log(this.state.handleLikes);
+		});
+	};
+	render() {
+		return (
+			<div className="App">
+				<Header />
+				<Hero heroVideo={this.state.heroVideo} />
+				<Main handleLikes={this.state.handleLikes} />
+				<Comments userComments={this.state.userComments} />
+				<VideosList
+					videoList={this.state.videoList}
+					handleClick={this.handleVideoClick}
+				/>
+			</div>
+		);
+	}
 }
 
 // //boiler plate
@@ -75,3 +85,19 @@ export default function App() {
 // 		);
 // 	}
 // }
+// const sortedVideos = videos.sort((a, b) => {
+// 	return b.upvotes - a.upvotes;
+
+// });
+
+//add push.state logic
+// state = {
+// 	livesChanged: 0,
+// 	books: sortedVideos,
+//   };
+//   handleButtonClick = () => {
+// 	console.log("This button was clicked");
+// 	this.setState({ livesChanged: this.state.livesChanged + 1 }, () => {
+// 	  console.log(this.state.livesChanged);
+// 	});
+//   };
