@@ -1,25 +1,25 @@
 import React from "react";
-import Nav from "../Nav/Nav";
-import Button from "../Button/Button";
-import "../Header/Header.scss";
 import logo from "../../assets/icons/BrainFlix-logo.svg";
-import Avatar from "../Avatar/Avatar";
+import avatar from "../../assets/images/Mohan-muruge.jpg";
+import "./Header.scss";
 
-function Header() {
+export default function Header() {
 	return (
-		<header className="header">
-			<div className="header__container">
-				<div className="header__container--top">
-					<img className="header--logo" src={logo} alt="BrainFlix-logo"></img>
-					<Nav />
-					<div className="header__container">
-						<Button />
-					</div>
-				</div>
-				<Avatar />
-			</div>
-		</header>
+		<div className="header__container">
+			<a href="./index.html">
+				<img className="header__logo" alt="BrainFlix-logo" src={logo} />
+			</a>
+			<nav className="header__nav">
+				<input
+					className="header__nav--search"
+					type="text"
+					placeholder="Search"
+				></input>
+				<img className="header__avatar" alt="Mohan-muruge" src={avatar} />
+			</nav>
+			<button className="header__button" type="submit">
+				UPLOAD
+			</button>
+		</div>
 	);
 }
-
-export default Header;

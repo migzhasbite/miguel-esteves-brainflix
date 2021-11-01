@@ -1,58 +1,29 @@
-import React, { Component } from "react";
-import "../VideosList/VideosList.scss";
+import React from "react";
+import { v4 as uuidv4 } from "uuid";
+import "./VideosList.scss";
 
-function VideosList(props) {
-	// render() {
+export default function VideosList(props) {
+	console.log(props);
+
 	return (
-		<>
-			<h1 className="video-list__heading">Next Videos</h1>
+		<div className="video-list__container">
+			<h2 className="video-list__heading">NEXT VIDEOS</h2>
 			{props.videoList.map((video) => {
 				return (
-					<div key={video.title} className="video-list__container">
+					<div key={uuidv4()} className="video-list">
 						<img
-							src={video.image}
 							className="video-list__image"
+							src={video.image}
 							alt={video.title}
+							onClick={(event) => props.handleVideoClick(event, video.id)}
 						/>
-						<p
-							className="video-list--info"
-							onClick={props.handleVideoClick}
-						></p>
-						{video.title},{video.channel},
+						<div className="video-list--info">
+							<p className="video-list--title">{video.title}</p>
+							<p className="video-list--channel">{video.channel}</p>
+						</div>
 					</div>
-					// 	image={video.image}
-					// 	title={video.title}
-					// 	channel={video.channel}
-					// 	handleVideoClick={this.handleVideoClick}
 				);
 			})}
-		</>
+		</div>
 	);
 }
-
-export default VideosList;
-
-// class VideosList extends Component {
-// 	// state= {
-// 	//     videosList: 0,
-// 	//enter more video data
-// 	// };
-// 	handleClick = () => {
-// 		console.log("this button was clicked");
-// 		this.setState({ videosList: this.state.commentsChanged + 1 }, () => {
-// 			console.log(this.state.commentsChanged);
-// 		});
-// 	};
-// 	render() {
-// 		return;
-
-// 		<Videos key={videos.title} />;
-// 	}
-// }
-// export default VideosList;
-
-// 	key={video.title}
-// 	image={video.image}
-// 	title={video.title}
-// 	channel={video.channel}
-// 	handleVideoClick={this.handleVideoClick}

@@ -1,21 +1,49 @@
-import React, { Component } from "react";
-import Form from "./Form/Form";
+import React from "react";
+import { v4 as uuidv4 } from "uuid";
+import "./Comments.scss";
+import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 export default function Comments(props) {
-	// console.log(props.userComments);
+	console.log(uuidv4());
 	return (
-		<div className="comments__container">
-			<p className="comments--counter"></p>
-			<Form />
-			<div className="user-comment__container">
-				{/* {props.userComments.comments.map((comment) => {
+		<div key={123} className="comments">
+			<div className="comments--qty">
+				<p>{props.comments.comments.length} Comments</p>
+			</div>
+			<div className="form__container">
+				<div className="form__container--left">
+					<div className="avatar__wrapper">
+						<img src={avatar} className="form__avatar" alt="Mohan-muruge"></img>
+					</div>
+				</div>
+
+				<div className="form__container--right">
+					<form id="form" className="form__wrapper" name="comment-form">
+						<label className="form__subtitle" for="userComment">
+							JOIN THE CONVERSATION
+						</label>
+						<textarea
+							className="form__text--content"
+							id="userComment"
+							name="userComment"
+							placeholder="Add new commment"
+						></textarea>
+						<button onClick="submit" className="form__button">
+							COMMENT
+						</button>
+					</form>
+				</div>
+			</div>
+			<div className="comments--display">
+				{props.comments.comments.reverse().map((comment) => {
 					return (
-						<div>
-							<div className="user-comment__image"></div>
-							<div className="user-comment__description">
-								<div className="user-comment__container--name-date">
-									<p className="user-comment--name">{comment.name}</p>
-									<p className="user-comment--date">
+						<div className="comments__container">
+							<figure className="comments__avatar"></figure>
+
+							<div key={uuidv4()}>
+								<div className="comments--info">
+									<p className="comments--name">{comment.name}</p>
+									<p className="comments--date">
 										{
 											(comment.timestamp = new Date(
 												comment.timestamp
@@ -23,32 +51,12 @@ export default function Comments(props) {
 										}
 									</p>
 								</div>
-								<p className="user-comment">{comment.comment}</p>
+								<p className="comments--comment">{comment.comment}</p>
 							</div>
 						</div>
 					);
-				})} */}
+				})}
 			</div>
 		</div>
 	);
 }
-//{/* // state = { */
-// 	// userComment: commentData,
-// };
-// render(){
-// return (
-// 	<div className="user-comment__container">
-// 		{this.state.userComment.reverse().map((comment)=> (
-
-// 			<div className="user-comment__image"></div>
-// 			<div className="user-comment__description">
-// 		<div className="user-comment__container--name-date">
-// 			<p className="user-comment--name">{props.name}</p>
-// 			<p className="user-comment--date">{props.date}</p>
-// 		</div>
-// 		<p className="user-comment">{props.comments.comment}</p>
-// 	</div>
-// 		))}
-// </div>
-// );
-// }

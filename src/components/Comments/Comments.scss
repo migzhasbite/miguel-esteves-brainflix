@@ -1,0 +1,147 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form {
+	margin: 1rem;
+	&__heading {
+		color: $mercury;
+	}
+	&__container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		&--left {
+			display: flex;
+			flex-grow: 1;
+			margin-top: 1.75rem;
+			max-width: 2.25rem;
+			max-height: 2.25rem;
+		}
+		&--right {
+			display: flex;
+			flex-grow: 1;
+			margin: 1rem;
+		}
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	&__avatar {
+		height: 2.1875rem;
+		width: 2.1875rem;
+		border-radius: 50%;
+	}
+	&__subtitle {
+		color: $mercury;
+	}
+
+	&__text {
+		&--error {
+			border: 1px solid #ff0000;
+		}
+		&--name {
+			&:focus {
+				outline: 1px solid $brainflix-dark-blue;
+				min-height: 2.25rem;
+				padding: 12px;
+				margin-bottom: 1rem;
+			}
+			background-color: $alabaster;
+			padding: 1rem;
+			margin-bottom: 1rem;
+			width: 100%;
+			border-radius: 4px;
+			border: solid $mercury 1px;
+			min-height: 3rem;
+		}
+		&--content {
+			&:focus {
+				outline: 1px solid $brainflix-black;
+			}
+			resize: none;
+			padding-left: 1rem;
+			padding-top: 1rem;
+			margin: 1rem 0;
+			background-color: $alabaster;
+			height: 100px;
+			border-radius: 4px;
+			border: solid $mercury 1px;
+			@include tablet {
+				height: auto;
+			}
+		}
+	}
+	&__button {
+		background-image: url("../../assets/icons/add_comment.svg");
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-color: $brainflix-blue;
+		border: none;
+		color: $white;
+		padding: 15px;
+		box-shadow: none;
+		border-radius: 4px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+
+		&:hover {
+			background: $brainflix-blue;
+		}
+	}
+}
+.comments {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	&__container {
+		display: flex;
+		align-self: flex-start;
+		border-top: solid 1px $silver;
+	}
+	&--qty {
+		display: flex;
+		& p {
+			font-weight: 700;
+		}
+	}
+	&__title {
+		color: $silver;
+		font-weight: 700;
+	}
+	&__avatar {
+		background-color: silver;
+		border-radius: 50%;
+		height: 26px;
+		width: 26px;
+	}
+	&__input {
+		padding: 20px;
+	}
+	&__button {
+		background-color: $brainflix-blue;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		color: $white;
+		padding: 0.625rem 0.625rem 0.3125rem 0.625rem;
+		border-radius: 4%;
+		width: 286px;
+		box-shadow: none;
+	}
+	&--info {
+		display: flex;
+		justify-content: space-between;
+	}
+	&--name {
+		font-weight: 700;
+	}
+	&--date {
+		color: silver;
+	}
+	&--comment {
+		text-align: left;
+	}
+}

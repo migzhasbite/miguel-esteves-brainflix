@@ -1,15 +1,41 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
 .video-list {
-	&__heading {
-	}
+	display: flex;
+	flex-direction: row;
+	margin: 1rem;
 	&__container {
-		height: 10vh;
-		width: 100%;
+		border-top: $silver 1px solid;
+		margin-left: 1rem;
 	}
-	&--info {
+	&__heading {
+		text-align: left;
+		color: $silver;
 	}
 	&__image {
-		height: 10vh;
-		width: 20%;
-		border-radius: 5px;
+		display: flex;
+		flex-direction: row;
+		height: 17vh;
+		width: 36vw;
+		border-radius: 6px;
+		object-fit: cover;
+		margin-right: 1rem;
+		@include tablet {
+			height: 16vh;
+			width: 20vw;
+		}
+	}
+	&--info {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+	}
+	&--title {
+		text-align: left;
+		font-weight: 700;
+	}
+	&--channel {
+		text-align: left;
 	}
 }

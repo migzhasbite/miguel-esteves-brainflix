@@ -1,36 +1,56 @@
 import React from "react";
 import views from "../../assets/icons/views.svg";
 import likes from "../../assets/icons/likes.svg";
-import "../Main/Main.scss";
+import "./Main.scss";
 
 export default function Main(props) {
 	console.log(props);
 	return (
-		<div className="main__container">
-			<h1 className="main__heading">{props.handleLikes.title}</h1>
-			<div className="main__container--info">
-				<div className="main__container--info--left">
-					<p>By {props.handleLikes.channel}</p>
-					<p>
-						{new Date(props.handleLikes.timestamp).toLocaleDateString("en-US")}
-					</p>
-				</div>
-				<div className="main__container--info--right">
-					<div className="main__container__section--column">
-						<img src={views} alt="views icon" />
-						<p>{props.handleLikes.views}</p>
-					</div>
-					<div className="main__container__section--column">
-						<img src={likes} alt="likes icon" />
-						<p>{props.handleLikes.likes}</p>
-					</div>
-				</div>
+		<main className="main">
+			<div className="main__hero-video">
+				<video
+					className="main__hero-video--image"
+					controls
+					poster={props.mainHeroVideo.image}
+				></video>
 			</div>
-			<article className="main__container__section--paragraph">
-				<p className="main__container__section--paragraph-text">
-					{props.handleLikes.description}
-				</p>
-			</article>
-		</div>
+			<div className="main__container">
+				<h1 className="main__heading">{props.mainHeroVideo.title}</h1>
+				<div className="main__container--info">
+					<div className="main__container--info--left">
+						<div className="main__container--info--column">
+							<p className="main--channel">{`By ${props.mainHeroVideo.channel}`}</p>
+							<p className="main--date">
+								{new Date(props.mainHeroVideo.timestamp).toLocaleDateString(
+									"en-US"
+								)}
+							</p>
+						</div>
+						<div className="main__container--info--right">
+							<div className="main__container--info--column">
+								<img
+									className="main__container--icons"
+									src={views}
+									alt="views icon"
+								/>
+								<p className="main--views">{props.mainHeroVideo.views}</p>
+							</div>
+							<div className="main__container--info--column">
+								<img
+									className="main__container--icons"
+									src={likes}
+									alt="likes icon"
+									onClick={() => {
+										props.handleLikes(Number(likes));
+									}}
+								/>
+								<p className="main--likes">{props.mainHeroVideo.likes}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p className="main--paragraph">{props.mainHeroVideo.description}</p>
+			</div>
+		</main>
 	);
 }
