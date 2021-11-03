@@ -1,14 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/icons/BrainFlix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import "./Header.scss";
 
-export default function Header() {
+export default function Header(props) {
+	console.log(props);
 	return (
 		<div className="header__container">
-			<a href="./index.html">
+			<Link to="/">
 				<img className="header__logo" alt="BrainFlix-logo" src={logo} />
-			</a>
+			</Link>
 			<nav className="header__nav">
 				<input
 					className="header__nav--search"
@@ -17,9 +19,11 @@ export default function Header() {
 				></input>
 				<img className="header__avatar" alt="Mohan-muruge" src={avatar} />
 			</nav>
-			<button className="header__button" type="submit">
-				UPLOAD
-			</button>
+			<Link to="/upload">
+				<button className="header__button" type="submit">
+					UPLOAD
+				</button>
+			</Link>
 		</div>
 	);
 }

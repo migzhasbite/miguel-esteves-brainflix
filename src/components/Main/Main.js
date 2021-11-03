@@ -9,6 +9,8 @@ export default function Main(props) {
 		<main className="main">
 			<div className="main__hero-video">
 				<video
+					src={props.mainHeroVideo.video}
+					type="video/mp4"
 					className="main__hero-video--image"
 					controls
 					poster={props.mainHeroVideo.image}
