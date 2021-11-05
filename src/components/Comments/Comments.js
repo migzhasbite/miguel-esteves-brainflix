@@ -4,11 +4,10 @@ import "./Comments.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 export default function Comments(props) {
-	console.log(uuidv4());
 	return (
 		<div key={123} className="comments">
 			<div className="comments--qty">
-				<p>{props.comments.comments.length} Comments</p>
+				<p>{`${props.comments.comments.length} Comments`}</p>
 			</div>
 			<div className="form__container">
 				<div className="form__container--left">

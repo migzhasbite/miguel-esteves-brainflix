@@ -4,8 +4,7 @@ import "./VideosList.scss";
 import { Link } from "react-router-dom";
 
 export default function VideosList(props) {
-	console.log(props);
-
+	// console.log(props);
 	return (
 		<div className="video-list__container">
 			<h2 className="video-list__heading">NEXT VIDEOS</h2>
@@ -17,7 +16,7 @@ export default function VideosList(props) {
 								className="video-list__image"
 								src={video.image}
 								alt={video.title}
-								onClick={(event) => props.handleVideoClick(event, video.id)}
+								// onClick={(event) => props.handleVideoClick(event, video.id)}
 							/>
 						</Link>
 						<div className="video-list--info">
@@ -30,16 +29,3 @@ export default function VideosList(props) {
 		</div>
 	);
 }
-// search for a video by its URL
-// const foundVideo = video.find((video)=> {
-// return( video.id ===props.match.params.id;
-
-// 	)
-// })
-//If no url does not exist
-// if (!foundVideo) {
-// 	return <Redirect to ="/videos" />;}
-
-//linking to a video from id
-//<sectionclassName=="planets">
-// {planets.map((planet)=>{return(<Link key={planet.id} to={props.match.path +`/${planet.id}`}></Link>)})}

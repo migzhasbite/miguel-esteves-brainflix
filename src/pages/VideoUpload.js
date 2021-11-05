@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import UploadPage from "../components/UploadPage/UploadPage";
 import data from "../data/video-details.json";
-import Test from "../components/Test/Test";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const Video = (props) => {

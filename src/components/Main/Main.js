@@ -4,7 +4,6 @@ import likes from "../../assets/icons/likes.svg";
 import "./Main.scss";
 
 export default function Main(props) {
-	console.log(props);
 	return (
 		<main className="main">
 			<div className="main__hero-video">
@@ -12,7 +11,6 @@ export default function Main(props) {
 					src={props.mainHeroVideo.video}
 					type="video/mp4"
 					className="main__hero-video--image"
-					controls
 					poster={props.mainHeroVideo.image}
 				></video>
 			</div>
@@ -42,9 +40,6 @@ export default function Main(props) {
 									className="main__container--icons"
 									src={likes}
 									alt="likes icon"
-									onClick={() => {
-										props.handleLikes(Number(likes));
-									}}
 								/>
 								<p className="main--likes">{props.mainHeroVideo.likes}</p>
 							</div>
