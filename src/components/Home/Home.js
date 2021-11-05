@@ -68,10 +68,13 @@ class Home extends Component {
 			<div>
 				<Main
 					mainHeroVideo={this.state.mainHeroVideo}
-					handleLikes={this.handleLikes}
+					// handleLikes={this.handleLikes}
 				/>
 				<Comments comments={this.state.mainHeroVideo} />
-				<VideosList videoList={this.state.videoList} />
+				<VideosList
+					videoList={this.state.videoList}
+					mainHeroVideo={this.state.mainHeroVideo}
+				/>
 			</div>
 		);
 	}
