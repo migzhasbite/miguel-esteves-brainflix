@@ -3,11 +3,11 @@ import { v4 as uuidv4 } from "uuid";
 import "./Comments.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
-export default function Comments(props) {
+export default function Comments({ comments, id }) {
 	return (
-		<div key={123} className="comments">
+		<div key={id} className="comments">
 			<div className="comments--qty">
-				<p>{`${props.comments.comments.length} Comments`}</p>
+				<p>{`${comments.length} Comments`}</p>
 			</div>
 			<div className="form__container">
 				<div className="form__container--left">
@@ -34,10 +34,10 @@ export default function Comments(props) {
 				</div>
 			</div>
 			<div className="comments--display">
-				{props.comments.comments.reverse().map((comment) => {
+				{comments.comments.reverse().map((comment) => {
 					return (
 						<div className="comments__container">
-							<figure className="comments__avatar"></figure>
+							<figure className="avatar avatar--empty"></figure>
 
 							<div key={uuidv4()}>
 								<div className="comments--info">

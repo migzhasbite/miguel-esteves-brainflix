@@ -1,22 +1,12 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
 
 .header {
 	&__container {
 		padding: 1rem;
-		@include tablet {
-			display: flex;
-			align-items: center;
-		}
 	}
 	&__logo {
-		@include tablet {
-			padding-left: 2rem;
-		}
-		@include desktop {
-			padding-left: 6rem;
-		}
 	}
 	&__nav {
 		display: flex;
@@ -25,8 +15,9 @@
 		&--search {
 			background-image: url("../../assets/icons/search.svg");
 			background-repeat: no-repeat;
-			background-position: left;
-			padding-left: 2rem;
+			background-position: left center;
+			background-position-x: 1rem;
+			padding-left: 3rem;
 			background-color: $alabaster;
 			border: solid $mercury 1px;
 			box-shadow: none;
@@ -34,25 +25,5 @@
 			width: 100%;
 			text-align: left;
 		}
-	}
-	&__avatar {
-		margin-left: 1rem;
-		height: 2.1875rem;
-		width: 2.1875rem;
-		border-radius: 50%;
-	}
-	&__button {
-		background-image: url(../../assets/icons/upload.svg);
-		background-repeat: no-repeat;
-		background-position: left;
-		background-color: $brainflix-blue;
-		border: none;
-		color: $white;
-		padding: 15px;
-		box-shadow: none;
-		border-radius: 4px;
-		width: 100%;
-		display: flex;
-		justify-content: center;
 	}
 }

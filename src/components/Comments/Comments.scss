@@ -1,5 +1,4 @@
 @use "../../styles/partials/variables" as *;
-@use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
 .form {
@@ -69,9 +68,9 @@
 			height: 100px;
 			border-radius: 4px;
 			border: solid $mercury 1px;
-			@include tablet {
-				height: auto;
-			}
+			// @include tablet {
+			// 	height: auto;
+			// }
 		}
 	}
 	&__button {
@@ -139,7 +138,7 @@
 		font-weight: 700;
 	}
 	&--date {
-		color: silver;
+		color: $silver;
 	}
 	&--comment {
 		text-align: left;

@@ -7,3 +7,27 @@ $tablet--breakpoint-max: 1279px;
 
 //max-width: 767px
 $mobile--breakpoint: 767px;
+
+//fonts
+@font-face {
+	font-family: "Avenir Regular";
+	src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+	// src: url("../../assets/font/AvenirNextLTPro.ttf") format ("truetype");
+}
+@font-face {
+	font-family: "Avenir Bold";
+	src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
+	//src: url("../../assets/font/AvenirNextLTProBold.ttf") format ("truetype");
+}
+
+//primary colors
+$brainflix-black: #323232;
+$brainflix-blue: #0095ff;
+$silver: hsl(0, 0%, 69%);
+$white: #ffffff;
+
+//secondary colors
+$brainflix-dark-black: #000000;
+$brainflix-dark-blue: #0065ad;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;

@@ -1,6 +1,6 @@
 import React from "react";
-import views from "../../assets/icons/views.svg";
-import likes from "../../assets/icons/likes.svg";
+import viewsIcon from "../../assets/icons/views.svg";
+import likesIcon from "../../assets/icons/likes.svg";
 import "./Main.scss";
 
 export default function Main(props) {
@@ -10,6 +10,7 @@ export default function Main(props) {
 				<video
 					src={props.mainHeroVideo.video}
 					type="video/mp4"
+					controls
 					className="main__hero-video--image"
 					poster={props.mainHeroVideo.image}
 				></video>
@@ -30,7 +31,7 @@ export default function Main(props) {
 							<div className="main__container--info--column">
 								<img
 									className="main__container--icons"
-									src={views}
+									src={viewsIcon}
 									alt="views icon"
 								/>
 								<p className="main--views">{props.mainHeroVideo.views}</p>
@@ -38,7 +39,7 @@ export default function Main(props) {
 							<div className="main__container--info--column">
 								<img
 									className="main__container--icons"
-									src={likes}
+									src={likesIcon}
 									alt="likes icon"
 								/>
 								<p className="main--likes">{props.mainHeroVideo.likes}</p>

@@ -1,23 +1,21 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 import "./VideosList.scss";
 import { Link } from "react-router-dom";
 
 export default function VideosList(props) {
-	console.log(props);
 	return (
 		<div className="video-list__container">
 			<h2 className="video-list__heading">NEXT VIDEOS</h2>
 			{props.videoList
 				.filter((filteredVideo) => filteredVideo.id !== props.mainHeroVideo.id)
 				.map((nextVideo) => (
-					<div key={uuidv4()} className="video-list">
+					<div key={nextVideo.id} className="video-list">
 						<Link to={`/videos/${nextVideo.id}`}>
 							<img
 								className="video-list__image"
 								src={nextVideo.image}
 								alt={nextVideo.title}
-								// onClick={(event) => props.handleVideoClick(event, video.id)}
 							/>
 						</Link>
 						<div className="video-list--info">

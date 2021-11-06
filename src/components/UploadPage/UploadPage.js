@@ -1,33 +1,38 @@
 import { Link } from "react-router-dom";
+import image from "../../assets/images/Upload-video-preview.jpg";
+import "./UploadPage.scss";
 
 export default function UploadPage() {
 	return (
-		<div className="upload__container">
-			<div>
+		<main className="upload">
+			<div className="upload__container">
 				<h1 className="upload__heading">Upload Video</h1>
-			</div>
-			<div className="upload__wrapper">
-				<p className="upload__subheading">Video Thumbnail</p>
-				<img src="/" />
-			</div>
-			<div className="upload__container--input">
+				<div className="upload__wrapper">
+					<p className="upload__subheading">Video Thumbnail</p>
+					<img
+						src={image}
+						className="upload__image"
+						alt="Upload-video-preview"
+					/>
+				</div>
+
 				<p className="upload__subheading">Title your video</p>
 				<input
 					type="text"
-					className="input"
+					className="input upload__input--title"
 					placeholder="Add a title to your video"
 				/>
 				<p className="upload__subheading">Add a video description</p>
 				<input
 					type="textarea"
-					className="input"
+					className="input upload__input--description"
 					placeholder="Add a description to your video"
 				/>
+				<button className="button button--publish">Publish</button>
+				<Link to="/" className="upload--cancel">
+					<p className="upload--cancel--text">Cancel</p>
+				</Link>
 			</div>
-			<button className="button">Publish</button>
-			<Link to="/">
-				<p>Cancel</p>
-			</Link>
-		</div>
+		</main>
 	);
 }

@@ -1,5 +1,4 @@
 @use "../../styles/partials/variables" as *;
-@use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
 .main {
@@ -7,11 +6,7 @@
 		width: 100%;
 	}
 	&__heading {
-		font-size: 24px;
-		line-height: 32px;
-		font-weight: 700;
-		color: $brainflix-black;
-		text-align: left;
+		@include text-page-header-color-talign($brainflix-black, left);
 	}
 	&__container {
 		display: flex;
@@ -34,9 +29,9 @@
 				align-items: center;
 				display: flex;
 				flex-direction: column;
-				@include tablet {
-					flex-direction: row;
-				}
+				// @include tablet {
+				// 	flex-direction: row;
+				// }
 			}
 		}
 		&--icons {

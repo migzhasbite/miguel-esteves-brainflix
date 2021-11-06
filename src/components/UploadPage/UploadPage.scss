@@ -1,0 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.upload {
+	border-top: 1px solid $mercury;
+	&__heading {
+		@include text-page-header-color-talign($brainflix-black, left);
+	}
+	&__container {
+		padding: 0 1rem;
+		text-align: left;
+	}
+	&__wrapper {
+	}
+	&__subheading {
+		@include text-section-header($silver, left);
+		margin: 0 0 0 0;
+	}
+	&__image {
+		height: 10rem;
+		width: 18rem;
+		border-radius: 4px;
+		margin-bottom: 1rem;
+	}
+	&__input {
+		&--description {
+			padding-bottom: 3.125rem;
+		}
+	}
+	&--cancel {
+		color: $brainflix-blue;
+		text-decoration: none;
+		&--text {
+			@include text-labels-buttons($brainflix-blue, center);
+			margin: 1rem;
+		}
+	}
+}

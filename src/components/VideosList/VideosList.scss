@@ -1,4 +1,4 @@
-@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
 .video-list {
@@ -21,10 +21,10 @@
 		border-radius: 6px;
 		object-fit: cover;
 		margin-right: 1rem;
-		@include tablet {
-			height: 16vh;
-			width: 20vw;
-		}
+		// @include tablet {
+		// 	height: 16vh;
+		// 	width: 20vw;
+		// }
 	}
 	&--info {
 		margin: 0;
