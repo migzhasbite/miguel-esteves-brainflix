@@ -7,7 +7,7 @@ export default function Comments({ comments, id }) {
 	return (
 		<div key={id} className="comments">
 			<div className="comments--qty">
-				<p>{`${comments.length} Comments`}</p>
+				<p>{`${comments.comments.length} Comments`}</p>
 			</div>
 			<div className="form__container">
 				<div className="form__container--left">
@@ -18,18 +18,20 @@ export default function Comments({ comments, id }) {
 
 				<div className="form__container--right">
 					<form id="form" className="form__wrapper" name="comment-form">
-						<label className="form__subtitle" for="userComment">
+						<label className="form__subheading" for="userComment">
 							JOIN THE CONVERSATION
 						</label>
-						<textarea
-							className="form__text--content"
-							id="userComment"
-							name="userComment"
-							placeholder="Add new commment"
-						></textarea>
-						<button onClick="submit" className="form__button">
-							COMMENT
-						</button>
+						<div className="form__input--container">
+							<textarea
+								className="input input--search"
+								id="userComment"
+								name="userComment"
+								placeholder="Add new commment"
+							></textarea>
+							<button onClick="submit" className="button button--comment">
+								COMMENT
+							</button>
+						</div>
 					</form>
 				</div>
 			</div>

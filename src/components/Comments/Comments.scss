@@ -1,11 +1,27 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
 
 .form {
 	margin: 1rem;
-	&__heading {
-		color: $mercury;
+	&__input {
+		padding-bottom: 3.125rem;
+		@include tablet {
+			padding-bottom: 0;
+		}
+		@include desktop {
+			padding-bottom: 0;
+		}
+		&--container {
+			@include tablet {
+				display: flex;
+			}
+			@include desktop {
+				display: flex;
+			}
+		}
 	}
+
 	&__container {
 		width: 100%;
 		display: flex;
@@ -24,17 +40,20 @@
 		}
 	}
 	&__wrapper {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 	}
 	&__avatar {
+		margin-top: 1rem;
+		position: absolute;
 		height: 2.1875rem;
 		width: 2.1875rem;
 		border-radius: 50%;
 	}
-	&__subtitle {
-		color: $mercury;
+	&__subheading {
+		@include text-section-header($silver, left);
 	}
 
 	&__text {
@@ -71,24 +90,6 @@
 			// @include tablet {
 			// 	height: auto;
 			// }
-		}
-	}
-	&__button {
-		background-image: url("../../assets/icons/add_comment.svg");
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-color: $brainflix-blue;
-		border: none;
-		color: $white;
-		padding: 15px;
-		box-shadow: none;
-		border-radius: 4px;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-
-		&:hover {
-			background: $brainflix-blue;
 		}
 	}
 }

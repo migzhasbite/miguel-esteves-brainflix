@@ -13,6 +13,7 @@ export default function Main(props) {
 					controls
 					className="main__hero-video--image"
 					poster={props.mainHeroVideo.image}
+					alt={props.mainHeroVideo.title}
 				></video>
 			</div>
 			<div className="main__container">

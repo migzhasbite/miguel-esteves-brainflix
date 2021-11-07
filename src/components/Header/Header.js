@@ -7,18 +7,18 @@ import "./Header.scss";
 export default function Header() {
 	return (
 		<div className="header__container">
-			<Link to="/">
+			<Link to="/" className="link header">
 				<img className="header__logo" alt="BrainFlix-logo" src={logo} />
 			</Link>
-			<nav className="header__nav">
+			<nav className="header__nav header">
 				<input
-					className="header__nav--search"
+					className="input header__nav--search"
 					type="search"
 					placeholder="Search"
 				></input>
-				<img className="avatar avatar--empty" alt="Mohan-muruge" src={avatar} />
 			</nav>
-			<Link to="/upload">
+			<img className="header--avatar avatar" alt="Mohan-muruge" src={avatar} />
+			<Link to="/upload" className="link header">
 				<button className="button button--upload" type="submit">
 					UPLOAD
 				</button>

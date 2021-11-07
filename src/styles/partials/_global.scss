@@ -1,15 +1,11 @@
 @use "./mixins" as *;
 @use "./variables" as *;
-body {
-	@include tablet {
-		padding: 1rem 2.25rem 1rem 2.25rem;
-	}
-	@include desktop {
-		padding: 1rem 2.25rem 1rem 2.25rem;
-	}
-}
+
 .button {
 	@include text-labels-buttons($white, center);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-position-x: 1rem;
@@ -17,9 +13,18 @@ body {
 	border: $brainflix-blue;
 	color: $white;
 	padding: 1rem;
+	height: 40px;
 	width: 100%;
 	box-shadow: none;
 	border-radius: 0.25rem;
+	@include tablet {
+		width: 0%;
+		min-width: 9.375rem;
+	}
+	@include desktop {
+		width: 0%;
+		min-width: 9.375rem;
+	}
 	&:hover {
 		background-color: $brainflix-dark-blue;
 		border: $brainflix-dark-blue;
@@ -47,18 +52,43 @@ body {
 	}
 }
 .input {
-	@include text-body-copy($brainflix-black, left);
-	min-width: 100%;
+	width: 100%;
 	padding: 0.5rem;
 	background-color: $alabaster;
+	background-position: left;
+	background-position-x: 1rem;
+	background-repeat: no-repeat;
 	border: 1px solid $mercury;
 	box-shadow: none;
 	border-radius: 0.25rem;
 	text-align: left;
 	margin-bottom: 1rem;
+	resize: none;
+	&::placeholder {
+		@include text-body-copy($brainflix-black, left);
+	}
 
 	&:focus {
-		outline: none;
-		border: solid 2px $brainflix-blue;
+		outline: solid 1px $brainflix-blue;
 	}
+	&--search {
+		padding-bottom: 3.125rem;
+		@include tablet {
+			margin-right: 1.5rem;
+			padding-bottom: 0;
+		}
+		@include desktop {
+			margin-right: 1.5rem;
+			padding-bottom: 0;
+		}
+	}
+	&--form {
+	}
+	&--upload {
+	}
+	&--description {
+	}
+}
+.link {
+	text-decoration: none;
 }
