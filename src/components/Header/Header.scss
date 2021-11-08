@@ -44,15 +44,6 @@
 			min-width: 250px;
 			margin-right: 1.5rem;
 		}
-
-		&--search {
-			background-image: url("../../assets/icons/search.svg");
-			background-position-x: 1rem;
-			width: 100%;
-			&::placeholder {
-				padding-left: 2rem;
-			}
-		}
 	}
 	&--avatar {
 		position: absolute;

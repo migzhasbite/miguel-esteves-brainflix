@@ -72,17 +72,18 @@
 		outline: solid 1px $brainflix-blue;
 	}
 	&--search {
-		padding-bottom: 3.125rem;
+		background-image: url("../../assets/icons/search.svg");
+		padding-left: 3rem;
 		@include tablet {
 			margin-right: 1.5rem;
-			padding-bottom: 0;
 		}
 		@include desktop {
 			margin-right: 1.5rem;
-			padding-bottom: 0;
 		}
 	}
 	&--form {
+		padding-bottom: 0;
+		margin-right: 1rem;
 	}
 	&--upload {
 	}
@@ -91,4 +92,7 @@
 }
 .link {
 	text-decoration: none;
+}
+.loading {
+	animation: spin 1s linear infinite;
 }

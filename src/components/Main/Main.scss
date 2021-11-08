@@ -21,44 +21,81 @@
 		display: flex;
 		flex-direction: column;
 		padding: 0 1rem;
+		@include tablet {
+			padding: 0 2.25rem;
+		}
+		@include desktop {
+			padding-left: 7rem;
+		}
 		&--info {
 			display: flex;
-			flex-direction: column;
-			border-top: 1px $silver solid;
-			border-bottom: 1px $silver solid;
+			justify-content: space-between;
+			border-top: solid 1px $mercury;
+			border-bottom: solid 1px $mercury;
+			color: $brainflix-black;
+			padding-top: 0.5rem;
+			@include tablet {
+				border-top: none;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+			&--views {
+				padding: 1rem 2rem 0.5rem 0;
+				margin: 0;
+				@include tablet {
+					padding-top: 10px;
+				}
+			}
+			&--likes {
+				margin: 0;
+				padding-right: 3.105rem;
+				@include tablet {
+					padding-top: 10px;
+				}
+			}
 			&--left,
 			&--right {
-				justify-content: space-between;
-				margin-right: 3rem;
-				display: flex;
-
-				// flex-direction: column;
+				@include tablet {
+					display: flex;
+				}
 			}
 			&--column {
 				align-items: center;
 				display: flex;
 				flex-direction: column;
-				// @include tablet {
-				// 	flex-direction: row;
-				// }
 			}
 		}
-		&--icons {
-			height: 1rem;
-			margin: 0 1rem;
+	}
+	&--icons {
+		display: inline-block;
+		padding-right: 3px;
+		@include tablet {
 		}
 	}
 	&--channel {
-		font-weight: 700;
-		margin-right: 1rem;
+		@include text-subheader($brainflix-black, left);
+	}
+	&--date {
+		padding-right: 10px;
+		color: $silver;
+		text-align: left;
+		@include tablet {
+			display: inline-block;
+			margin-left: 30px;
+		}
 	}
 	&--likes,
 	&--views {
-		color: $silver;
-		padding: 0px;
+		@include text-body-copy($silver, left);
+		padding-bottom: 2px;
+		margin: 0;
+		display: inline-block;
+		margin-right: 0.5rem;
 	}
 
 	&--paragraph {
-		text-align: left;
+		@include text-body-copy($brainflix-dark-black, left);
 	}
 }

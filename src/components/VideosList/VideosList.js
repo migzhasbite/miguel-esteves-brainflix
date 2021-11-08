@@ -24,7 +24,6 @@ export default function VideosList(props) {
 						</div>
 					</div>
 				))}
-			)
 		</div>
 	);
 }

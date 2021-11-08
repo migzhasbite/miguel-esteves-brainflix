@@ -23,7 +23,7 @@ export default function Comments({ comments, id }) {
 						</label>
 						<div className="form__input--container">
 							<textarea
-								className="input input--search"
+								className="input input--form"
 								id="userComment"
 								name="userComment"
 								placeholder="Add new commment"

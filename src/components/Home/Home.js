@@ -35,7 +35,7 @@ class Home extends Component {
 			})
 			.catch((error) => {});
 	}
-	componentDidUpdate(prevProps, prevState) {
+	componentDidUpdate(prevProps) {
 		//comparing id values from props previous and once other video is selected
 		if (prevProps.match.params.id !== this.props.match.params.id) {
 			axios
@@ -62,14 +62,11 @@ class Home extends Component {
 	render() {
 		//safety net, if call is taking a while, until its no longer true, then will render data on second return
 		if (!this.state.mainHeroVideo) {
-			return <div>Loading...</div>;
+			return <div className="loading">Loading...</div>;
 		}
 		return (
 			<div>
-				<Main
-					mainHeroVideo={this.state.mainHeroVideo}
-					// handleLikes={this.handleLikes}
-				/>
+				<Main mainHeroVideo={this.state.mainHeroVideo} />
 				<Comments comments={this.state.mainHeroVideo} />
 				<VideosList
 					videoList={this.state.videoList}

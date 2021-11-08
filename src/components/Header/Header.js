@@ -12,7 +12,7 @@ export default function Header() {
 			</Link>
 			<nav className="header__nav header">
 				<input
-					className="input header__nav--search"
+					className="input input--search"
 					type="search"
 					placeholder="Search"
 				></input>
