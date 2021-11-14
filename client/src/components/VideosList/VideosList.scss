@@ -3,43 +3,65 @@
 
 .video-list {
 	display: flex;
-	flex-direction: row;
-	// margin: 1rem;
+	flex-direction: column;
+	border-top: solid 1px $silver;
+	margin: 0 1rem;
+	@include tablet {
+		margin: 0 2.25rem;
+	}
+	@include desktop {
+		padding: 1rem;
+		border-top: none;
+		border-left: $mercury 1px solid;
+		height: 50vh;
+		width: 72vw;
+		margin: 0;
+	}
 	&__container {
-		border-top: $silver 1px solid;
-		margin: 0 1rem;
-		@include tablet {
-			padding: 0 2.25rem;
-		}
 		@include desktop {
-			padding: 0 2.25rem;
+			height: 100%;
+			overflow: auto;
+			padding-right: 2.25rem;
+			border-top: none;
+		}
+	}
+	&__card {
+		margin: 0.75rem 0;
+		display: flex;
+		& a {
+			height: 75px;
 		}
 	}
 	&__heading {
-		text-align: left;
+		@include text-section-header($silver, left);
+
 		color: $silver;
+		@include tablet {
+			padding: 1rem 0;
+		}
+		@include desktop {
+			padding: 1rem 0;
+		}
 	}
 	&__image {
-		display: flex;
-		flex-direction: row;
-		height: 12vh;
-		width: 32vw;
-		border-radius: 6px;
+		height: 4.375rem;
+		width: 7.8125rem;
+		border-radius: 4px;
 		object-fit: cover;
-		margin-right: 1rem;
-		margin-bottom: 1rem;
 	}
 	&--info {
-		margin: 0;
+		margin-left: 1rem;
 		display: flex;
 		flex-direction: column;
+		@include desktop {
+			margin-left: 1.5rem;
+		}
 	}
 	&--title {
+		@include text-subheader($brainflix-dark-black, left);
 		margin: 0;
-		text-align: left;
-		font-weight: 700;
 	}
 	&--channel {
-		text-align: left;
+		@include text-body-copy($brainflix-dark-black, left);
 	}
 }

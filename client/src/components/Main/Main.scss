@@ -16,8 +16,15 @@
 	}
 	&__heading {
 		@include text-page-header-color-talign($brainflix-black, left);
+		@include tablet {
+			margin-bottom: 0;
+		}
+		@include desktop {
+			margin-bottom: 0;
+		}
 	}
 	&__container {
+		width: auto;
 		display: flex;
 		flex-direction: column;
 		padding: 0 1rem;
@@ -26,6 +33,7 @@
 		}
 		@include desktop {
 			padding-left: 7rem;
+			padding-right: 0;
 		}
 		&--info {
 			display: flex;
@@ -33,7 +41,6 @@
 			border-top: solid 1px $mercury;
 			border-bottom: solid 1px $mercury;
 			color: $brainflix-black;
-			padding-top: 0.5rem;
 			@include tablet {
 				border-top: none;
 				display: flex;
@@ -41,23 +48,46 @@
 				justify-content: space-between;
 				align-items: center;
 			}
+			@include desktop {
+				border-top: none;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
 			&--views {
-				padding: 1rem 2rem 0.5rem 0;
+				display: flex;
+				align-items: center;
+				padding: 1rem 0;
 				margin: 0;
 				@include tablet {
-					padding-top: 10px;
+					padding: 0;
+				}
+				@include desktop {
+					padding: 0;
+					padding-right: 1.5rem;
+					// padding-top: 10px;
 				}
 			}
 			&--likes {
+				display: flex;
+				align-items: center;
 				margin: 0;
 				padding-right: 3.105rem;
 				@include tablet {
-					padding-top: 10px;
+					padding-right: 0;
+				}
+				@include desktop {
+					padding-right: 1.5rem;
+					// padding-top: 10px;
 				}
 			}
 			&--left,
 			&--right {
 				@include tablet {
+					display: flex;
+				}
+				@include desktop {
 					display: flex;
 				}
 			}
@@ -69,9 +99,13 @@
 		}
 	}
 	&--icons {
-		display: inline-block;
-		padding-right: 3px;
+		margin: 0 0.5rem 0 0.5rem;
+
 		@include tablet {
+			margin: 0 0.5rem 0 1.5rem;
+		}
+		@include desktop {
+			margin: 0 0.5rem 0 1.5rem;
 		}
 	}
 	&--channel {
@@ -85,17 +119,22 @@
 			display: inline-block;
 			margin-left: 30px;
 		}
+		@include desktop {
+			display: inline-block;
+			margin-left: 30px;
+		}
 	}
 	&--likes,
 	&--views {
 		@include text-body-copy($silver, left);
-		padding-bottom: 2px;
 		margin: 0;
-		display: inline-block;
-		margin-right: 0.5rem;
+		// margin-right: 1.5rem;
 	}
 
 	&--paragraph {
 		@include text-body-copy($brainflix-dark-black, left);
+		@include desktop {
+			padding-right: 1.5rem;
+		}
 	}
 }

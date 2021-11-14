@@ -1,23 +1,12 @@
-import React from "react";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 import "./Main.scss";
 
 export default function Main({ mainHeroVideo }) {
-	const { video, image, title, channel, views, likes, description, timestamp } =
+	const { title, channel, views, likes, description, timestamp } =
 		mainHeroVideo;
 	return (
 		<main className="main">
-			<div className="main__hero-video">
-				<video
-					src={video}
-					type="video/mp4"
-					controls
-					className="main__hero-video--image"
-					poster={image}
-					alt={title}
-				></video>
-			</div>
 			<div className="main__container">
 				<h1 className="main__heading">{title}</h1>
 				<div className="main__container--info">

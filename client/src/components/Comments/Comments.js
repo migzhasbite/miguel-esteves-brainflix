@@ -10,8 +10,8 @@ export default function Comments({ comments, id }) {
 			</div>
 			<div className="form__container">
 				<div className="form__container--left">
-					<div className="avatar__wrapper">
-						<img src={avatar} className="form__avatar" alt="Mohan-muruge"></img>
+					<div className="form__avatar__wrapper">
+						<img src={avatar} className="avatar" alt="Mohan-muruge"></img>
 					</div>
 				</div>
 
@@ -37,10 +37,10 @@ export default function Comments({ comments, id }) {
 			<div className="comments--display">
 				{comments.comments.reverse().map(({ name, timestamp, comment }) => {
 					return (
-						<div className="comments__container">
+						<div className="comments__card">
 							<figure className="avatar avatar--empty"></figure>
 
-							<div key={id}>
+							<div className="comments__container" key={id}>
 								<div className="comments--info">
 									<p className="comments--name">{name}</p>
 									<p className="comments--date">

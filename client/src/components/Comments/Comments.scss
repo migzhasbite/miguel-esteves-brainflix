@@ -13,11 +13,14 @@
 			padding-bottom: 0;
 		}
 		&--container {
+			display: flex;
+			flex-direction: column;
 			@include tablet {
-				display: flex;
+				flex-direction: row;
 			}
 			@include desktop {
-				display: flex;
+				padding-right: 1.5rem;
+				flex-direction: row;
 			}
 		}
 	}
@@ -26,6 +29,7 @@
 		width: 100%;
 		display: flex;
 		justify-content: center;
+		margin-right: auto;
 		&--left {
 			display: flex;
 			flex-grow: 1;
@@ -37,6 +41,13 @@
 			display: flex;
 			flex-grow: 1;
 			margin: 1rem;
+			margin-right: 0;
+			@include tablet {
+				margin-right: 0;
+			}
+			@include desktop {
+				margin-right: 0;
+			}
 		}
 	}
 	&__wrapper {
@@ -45,13 +56,7 @@
 		flex-direction: column;
 		width: 100%;
 	}
-	&__avatar {
-		margin-top: 1rem;
-		position: absolute;
-		height: 2.1875rem;
-		width: 2.1875rem;
-		border-radius: 50%;
-	}
+
 	&__subheading {
 		@include text-section-header($silver, left);
 	}
@@ -93,16 +98,27 @@
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-start;
 	@include tablet {
 		padding: 0 2.25rem;
 	}
 	@include desktop {
-		padding-left: 7rem;
+		padding: 0;
 	}
-	&__container {
+	@include desktop {
+		padding-left: 7rem;
+		height: 25vh;
+	}
+	&__card {
 		display: flex;
 		align-self: flex-start;
 		border-top: solid 1px $silver;
+	}
+	&__container {
+		margin: 0 1rem;
+		@include desktop {
+			padding-right: 0.5rem;
+		}
 	}
 	&--qty {
 		display: flex;

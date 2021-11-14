@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import VideosList from "../components/VideosList/VideosList";
 import Main from "../components/Main/Main";
 import Comments from "../components/Comments/Comments";
+import Hero from "../components/Hero/Hero";
+import "./Home.scss";
 import axios from "axios";
 
 const apiURL = process.env.REACT_APP_API_URL;
@@ -56,13 +58,18 @@ class Home extends Component {
 		}
 		return (
 			<div>
-				<Main mainHeroVideo={this.state.mainHeroVideo} />
-				<Comments comments={this.state.mainHeroVideo} />
-				<VideosList
-					videoList={this.state.videoList}
-					mainHeroVideo={this.state.mainHeroVideo}
-					paramsId={this.props}
-				/>
+				<Hero mainHeroVideo={this.state.mainHeroVideo} />
+				<div className="container__flex--row">
+					<div className="container__flex--column">
+						<Main mainHeroVideo={this.state.mainHeroVideo} />
+						<Comments comments={this.state.mainHeroVideo} />
+					</div>
+					<VideosList
+						videoList={this.state.videoList}
+						mainHeroVideo={this.state.mainHeroVideo}
+						paramsId={this.props}
+					/>
+				</div>
 			</div>
 		);
 	}

@@ -1,0 +1,100 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.upload {
+	margin: 1rem;
+	@include tablet {
+		margin: 0 2.25rem;
+	}
+	@include desktop {
+		margin: 0 7rem;
+	}
+	&__heading {
+		@include text-page-header-color-talign($brainflix-black, left);
+	}
+	&__container {
+		text-align: left;
+		@include tablet {
+			border-bottom: $mercury 1px solid;
+			border-top: $mercury 1px solid;
+			padding: 0;
+			padding-top: 1.5rem;
+		}
+		@include desktop {
+			display: flex;
+			border-bottom: $mercury 1px solid;
+			border-top: $mercury 1px solid;
+			padding: 0;
+			padding-top: 1.5rem;
+		}
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	&__subheading {
+		@include text-section-header($silver, left);
+		margin: 0;
+	}
+	&__image {
+		height: 10rem;
+		width: 18rem;
+		border-radius: 4px;
+		margin-bottom: 1rem;
+	}
+	&__input {
+		padding: 1rem 0;
+		@include desktop {
+			width: 100%;
+			margin-left: 1.5rem;
+		}
+		&--description {
+			padding-bottom: 3.125rem;
+		}
+	}
+	&--cancel {
+		color: $brainflix-blue;
+		text-decoration: none;
+		@include tablet {
+			width: 150px;
+			align-self: center;
+		}
+		@include desktop {
+			width: 150px;
+			align-self: center;
+		}
+		&--text {
+			@include text-labels-buttons($brainflix-blue, center);
+			margin: 1rem;
+			@include tablet {
+				margin: 0;
+			}
+			@include desktop {
+				margin: 0;
+			}
+		}
+	}
+	&__button--container {
+		@include tablet {
+			padding: 0;
+			margin-top: 1.5rem;
+			display: flex;
+			justify-content: flex-end;
+			& > button {
+				order: 2;
+				max-width: 150px;
+			}
+		}
+		@include desktop {
+			padding: 0;
+			margin-top: 1.5rem;
+			display: flex;
+			justify-content: flex-end;
+			& > button {
+				order: 2;
+				max-width: 150px;
+			}
+		}
+	}
+}

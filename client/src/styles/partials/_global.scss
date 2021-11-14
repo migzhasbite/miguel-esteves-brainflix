@@ -40,24 +40,26 @@
 	}
 }
 .avatar {
-	margin-left: 1rem;
 	height: 2.1875rem;
 	width: 2.1875rem;
 	border-radius: 50%;
 	object-fit: cover;
+	margin: auto;
 	&--empty {
+		display: flex;
+		align-self: flex-start;
 		min-width: 2.1875rem;
-		// object-fit: none;
+		margin-top: revert;
 		background-color: $mercury;
 	}
 }
 .input {
+	@include text-body-copy($brainflix-dark-black, left);
+	display: flex;
+	margin-right: 1rem;
 	width: 100%;
 	padding: 0.5rem;
 	background-color: $alabaster;
-	background-position: left;
-	background-position-x: 1rem;
-	background-repeat: no-repeat;
 	border: 1px solid $mercury;
 	box-shadow: none;
 	border-radius: 0.25rem;
@@ -72,8 +74,12 @@
 		outline: solid 1px $brainflix-blue;
 	}
 	&--search {
+		background-position: left;
+		background-position-x: 1rem;
+		background-repeat: no-repeat;
 		background-image: url("../../assets/icons/search.svg");
 		padding-left: 3rem;
+		margin-right: 0;
 		@include tablet {
 			margin-right: 1.5rem;
 		}
@@ -82,12 +88,31 @@
 		}
 	}
 	&--form {
-		padding-bottom: 0;
-		margin-right: 1rem;
+		width: auto;
+		padding-bottom: 3rem;
+		padding-right: 0;
+		margin-right: 0;
+		@include tablet {
+			width: 100%;
+			margin-right: 1.5rem;
+			padding-bottom: 0;
+		}
+		@include desktop {
+			width: 100%;
+			margin-right: 1.5rem;
+			padding-bottom: 0;
+		}
 	}
 	&--upload {
+		width: 98%;
+		margin-right: 0;
+		padding-right: 0;
 	}
 	&--description {
+		width: 98%;
+		margin-right: 0;
+		padding-right: 0;
+		padding-bottom: 3rem;
 	}
 }
 .link {
