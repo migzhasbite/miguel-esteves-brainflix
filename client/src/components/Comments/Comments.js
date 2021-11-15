@@ -2,9 +2,9 @@ import React from "react";
 import "./Comments.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
-export default function Comments({ comments, id }) {
+export default function Comments({ comments }) {
 	return (
-		<div key={id} className="comments">
+		<div key={comments.id} className="comments">
 			<div className="comments--qty">
 				<p>{`${comments.comments.length} Comments`}</p>
 			</div>
@@ -23,13 +23,12 @@ export default function Comments({ comments, id }) {
 						<div className="form__input--container">
 							<textarea
 								className="input input--form"
-								id="userComment"
-								name="userComment"
-								placeholder="Add new commment"
-							></textarea>
-							<button onClick="submit" className="button button--comment">
-								COMMENT
-							</button>
+								rows="1"
+								type="textarea"
+								name="description"
+								placeholder="Write comment here"
+							/>
+							<button className="button button--comment">COMMENT</button>
 						</div>
 					</form>
 				</div>
@@ -40,7 +39,7 @@ export default function Comments({ comments, id }) {
 						<div className="comments__card">
 							<figure className="avatar avatar--empty"></figure>
 
-							<div className="comments__container" key={id}>
+							<div className="comments__container" key={comments.id}>
 								<div className="comments--info">
 									<p className="comments--name">{name}</p>
 									<p className="comments--date">

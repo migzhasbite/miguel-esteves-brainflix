@@ -16,15 +16,15 @@ export default function VideosList(props) {
 							filteredVideo.id !== props.paramsId.match.params.id
 					)
 					.map(({ id, image, title, channel }) => (
-						<div key={id} className="video-list__card">
-							<Link to={`/videos/${id}`}>
+						<Link to={`/videos/${id}`}>
+							<div key={id} className="video-list__card">
 								<img className="video-list__image" src={image} alt={title} />
-							</Link>
-							<div className="video-list--info">
-								<p className="video-list--title">{title}</p>
-								<p className="video-list--channel">{channel}</p>
+								<div className="video-list--info">
+									<p className="video-list--title">{title}</p>
+									<p className="video-list--channel">{channel}</p>
+								</div>
 							</div>
-						</div>
+						</Link>
 					))}
 			</div>
 		</section>

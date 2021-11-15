@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Upload from "../components/Upload/Upload";
-// import "../components/UploadPage/UploadPage.scss";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -31,7 +30,7 @@ export default class VideoUpload extends Component {
 					alert("Thanks for your submission!");
 				})
 				.catch((err) => {
-					console.log("Check handle submit function.", err);
+					console.log("Check handleSubmit. ", err);
 				});
 		}
 	};

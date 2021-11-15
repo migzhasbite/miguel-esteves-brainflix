@@ -17,7 +17,7 @@ const getVideoData = () => {
 
 getVideoData();
 
-router.get("/", (req, res) => {
+router.get("/", (_req, res) => {
 	res.json(videoData);
 });
 
@@ -52,18 +52,18 @@ router.post("/", (req, res) => {
 		comments: [],
 		id: uuidv4(),
 	};
-	console.log(newVideo);
 	videos.push(newVideo);
 	fs.writeFile("./data/video-details.json", JSON.stringify(videos), (err) => {
 		if (err) {
-			console.log(`Server encountered an unexpected condition that prevented
-			it from uploading video.`);
-			res.status(500).send(err);
+			res.status(500).send(
+				`Server encountered an unexpected condition that prevented
+			it from uploading video.`,
+				err
+			);
 		} else {
 			console.log("Successfully created new video.");
 			res.status(201).json(newVideo);
 		}
 	});
 });
-
 module.exports = router;

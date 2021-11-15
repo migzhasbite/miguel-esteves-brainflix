@@ -17,19 +17,10 @@ export default function Upload({ state, handleChange, handleSubmit }) {
 							alt="Upload-video-preview"
 							onChange={handleChange}
 						/>
-						{/* <input
-							// required
-							className="upload__file"
-							type="file"
-							name="image"
-							method="POST"
-							placeholder={image}
-						/> */}
 					</div>
 					<div className="upload__input">
 						<label className="upload__subheading">Title your video</label>
 						<input
-							// required
 							className="input input--upload"
 							type="text"
 							name="title"
@@ -37,8 +28,7 @@ export default function Upload({ state, handleChange, handleSubmit }) {
 							onChange={handleChange}
 						/>
 						<p className="upload__subheading">Add a video description</p>
-						<input
-							// required
+						<textarea
 							className="input input--description"
 							type="textarea"
 							name="description"

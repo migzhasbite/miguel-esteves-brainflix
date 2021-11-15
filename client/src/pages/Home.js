@@ -32,9 +32,11 @@ class Home extends Component {
 							this.setState({ isLoading: false });
 						});
 					})
-					.catch((err) => console.log(err));
+					.catch((err) =>
+						console.log("Check compononentDidMount for single video.", err)
+					);
 			})
-			.catch((err) => console.log(err));
+			.catch((err) => console.log("Check componentDidMount for videos", err));
 	}
 	componentDidUpdate(prevProps) {
 		const id = this.props.match.params.id;
@@ -47,7 +49,7 @@ class Home extends Component {
 					});
 				})
 				.catch((err) => {
-					console.log("Check the componentDidUpdate", err);
+					console.log("Check the componentDidUpdate function", err);
 				});
 		}
 	}

@@ -51,6 +51,8 @@
 		min-width: 2.1875rem;
 		margin-top: revert;
 		background-color: $mercury;
+		margin-right: 0;
+		margin-left: 0;
 	}
 }
 .input {
@@ -95,12 +97,12 @@
 		@include tablet {
 			width: 100%;
 			margin-right: 1.5rem;
-			padding-bottom: 0;
+			padding-bottom: 0.5rem;
 		}
 		@include desktop {
 			width: 100%;
 			margin-right: 1.5rem;
-			padding-bottom: 0;
+			padding-bottom: 0.5rem;
 		}
 	}
 	&--upload {
@@ -113,6 +115,12 @@
 		margin-right: 0;
 		padding-right: 0;
 		padding-bottom: 3rem;
+		@include tablet {
+			margin-right: 1.5rem;
+		}
+		@include desktop {
+			margin-right: 1.5rem;
+		}
 	}
 }
 .link {
